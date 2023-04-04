@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/static/css/main.fc754e19.css",
+    "main.js": "/static/js/main.a9b2a48f.js",
+    "static/js/787.cda612ba.chunk.js": "/static/js/787.cda612ba.chunk.js",
+    "static/media/BenImg.png": "/static/media/BenImg.0acf30dccdd12c6e4a8e.png",
+    "static/media/Slider.png": "/static/media/Slider.0df62a5029a5cf84a1b4.png",
+    "static/media/Soon.png": "/static/media/Soon.59bae7b097b20a61338a.png",
+    "static/media/Coming.png": "/static/media/Coming.d71f63114b15a85e472a.png",
+    "static/media/raspred1.png": "/static/media/raspred1.1c95a1d00d55d9e2d124.png",
+    "static/media/Papers.png": "/static/media/Papers.5cd34d9fa3c7297013aa.png",
+    "static/media/Astrology.png": "/static/media/Astrology.916f685b6f8dad965461.png",
+    "static/media/Logo.png": "/static/media/Logo.8861fbf853785762bef8.png",
+    "static/media/logo.svg": "/static/media/logo.87056a25044d1c1a53dcb72e06e80630.svg",
+    "index.html": "/index.html",
+    "main.fc754e19.css.map": "/static/css/main.fc754e19.css.map",
+    "main.a9b2a48f.js.map": "/static/js/main.a9b2a48f.js.map",
+    "787.cda612ba.chunk.js.map": "/static/js/787.cda612ba.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.fc754e19.css",
+    "static/js/main.a9b2a48f.js"
+  ]
+}
