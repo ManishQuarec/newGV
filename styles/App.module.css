@@ -151,3 +151,10 @@
     height: 70px;
   }
 }
+
+@media (max-width: 1025px) { 
+  .HomePage {
+    margin-top: 0%;
+  }
+
+}
