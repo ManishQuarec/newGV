@@ -39,7 +39,10 @@ export default function Home() {
           property="twitter:image"
           content="https://secretseventeen.com/Media/icon.png"
         />
-        <link rel="shortcut icon" href="../public/favicon.png" />
+        <link rel="shortcut icon" href="/favicon.ico" />
+
+
+     
 
         {/* ---- */}
         {/* <title>Create Next App</title> */}
@@ -48,14 +51,14 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" /> */}
       </Head>
 
-     {/*<Papers/>*/}
+      {/*<Papers/>*/}
 
       {/* <Bottom /> */}
-       <App> 
-      <TrendingNews />
+      <App>
+        <TrendingNews />
 
-      <NewsBlock value={{ unique: true }} />
-       </App> 
+        <NewsBlock value={{ unique: true }} />
+      </App>
 
       {/* <Nav/> */}
       {/* <LeftMenuBar/> */}

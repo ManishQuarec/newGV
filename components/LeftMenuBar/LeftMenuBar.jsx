@@ -142,7 +142,7 @@ function LeftMenuBar() {
             <div
               className={styles.category}
               onClick={(e) => {
-                dataSend("/category/Original");
+                dataSend("/category/Entertainment");
               }}
             >
               <div className={styles.DATA}>

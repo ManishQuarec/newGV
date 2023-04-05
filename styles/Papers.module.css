@@ -1,8 +1,9 @@
 .EPapers {
   border-bottom: 3px solid #000;
 }
-.EPapers h1 {
-  font-size: 30px;
+.EPapers h2 {
+  font-size: 25px;
+  margin-top: 8%;
 }
 .Collection {
   margin: 0px;
@@ -134,4 +135,13 @@
     float: left;
     margin: 10px 10px 0px 18px;
   }
+}
+
+
+@media only screen and (max-width: 810px) and (min-width: 360px) {
+  .EPapers h2 {
+    font-size: 20px;
+    margin-top: 0%;
+  }
+
 }

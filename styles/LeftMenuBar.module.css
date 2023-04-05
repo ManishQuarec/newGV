@@ -1,7 +1,7 @@
 .categorysection {
   width: 223px;
   height: auto;
-  padding-top: 10px;
+  padding-top: 24px;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -105,7 +105,7 @@
   .categorysection {
     width: 260px;
     height: auto;
-    padding-top: 10px;
+    /* padding-top: 10px; */
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -126,6 +126,15 @@
   }
 }
 
+
+@media only screen and (max-width: 1290px) and (min-width: 1025px) {
+  .categorysection {
+    margin-top: 5%;
+  }
+
+
+}
+
 @media only screen and (max-width: 2000px) and (min-width: 1800px) {
   .categorysection {
     /* width: 350px; */
@@ -140,7 +149,7 @@
 
   .category {
     /* width: 300px; */
-    height: 65px;
+    /* height: 65px; */
     background-color: white;
     /* margin-bottom: 18px; */
     font-size: 40px;

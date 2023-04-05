@@ -3,17 +3,11 @@ import React, { useState, useEffect } from "react";
 import styles from "../../styles/Nav.module.css";
 import Image from 'next/image';
 // import "../ComingSoon/Coming";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faHome,
-  faPlayCircle,
-  faSearch,
-  faNewspaper,
-  faBars,
-  faEllipsisV,
-} from "@fortawesome/free-solid-svg-icons";
+
 import img from "../../public/Logo.png";
 import Link from "next/link";
+// import Image from 'next/image';
+
 function Nav() {
   // var [date, setDate] = useState(new Date());
 
@@ -32,7 +26,7 @@ function Nav() {
         <div className={styles.logo}>
           <Link href="/">
             <Image
-            className={styles.imgs}
+              className={styles.imgs}
               src="/Logo.png"
               width={200}
               height={50}
@@ -53,15 +47,25 @@ function Nav() {
             </div> */}
           {/* Date and Time END */}
         </div>
-        <label htmlFor="check" className={styles.Icones}>
+        {/* <label htmlFor="check" className={styles.Icones}>
           <FontAwesomeIcon icon={faBars}></FontAwesomeIcon>
-        </label>
+        </label> 
+        
+        <FontAwesomeIcon icon={faHome}/> */}
 
         <div className={styles.navmenu}>
           <ul>
             <Link style={{ textDecoration: "none", color: "#000" }} href="/">
               <li className={styles.datas}>
-                <FontAwesomeIcon icon={faHome}></FontAwesomeIcon>હોમ
+
+                <Image
+                  src="/home.svg"
+                  alt="Home"
+                  width={24}
+                  height={24}
+                />
+                <div className={styles.infosize2}>હોમ</div>
+
               </li>
             </Link>
             <Link
@@ -69,7 +73,13 @@ function Nav() {
               href="/coming"
             >
               <li className={styles.link}>
-                <FontAwesomeIcon icon={faPlayCircle}></FontAwesomeIcon>વીડિઓ
+                <Image
+                  src="/play-button.svg"
+                  alt="Video"
+                  width={24}
+                  height={24}
+                />
+                <div className={styles.infosize} >વીડિઓ</div>
               </li>
             </Link>
             <Link
@@ -77,27 +87,52 @@ function Nav() {
               href="/coming"
             >
               <li className={styles.link}>
-                <FontAwesomeIcon icon={faSearch}></FontAwesomeIcon>સર્ચ કરો
+                <Image
+                  src="/search.svg"
+                  alt="Search"
+                  width={24}
+                  height={24}
+                />
+
+                <div className={styles.infosize}>સર્ચ કરો</div>
               </li>
             </Link>
             <Link
               style={{ textDecoration: "none", color: "#000" }}
-              href="/epapers"
+              href="/epaper"
             >
               <li className={styles.link}>
-                <FontAwesomeIcon icon={faNewspaper}></FontAwesomeIcon>ઇ-પેપર્સ
-              </li>
-              <li className={styles.MediaIco}>
-                <FontAwesomeIcon icon={faNewspaper}></FontAwesomeIcon>
+                <Image
+                  src="/newspaper.svg"
+                  alt="newspapers"
+                  width={24}
+                  height={24}
+                />
+                <div className={styles.infosize}>ઇ-પેપર્સ</div>
               </li>
             </Link>
+
             {/* <a style={{ textDecoration: "none", color: "#000" }} href="/">
                 <li className="MediaIcoDOT">
                   <FontAwesomeIcon icon={faEllipsisV}></FontAwesomeIcon>
                 </li>
               </a> */}
+            <Link
+              style={{ textDecoration: "none", color: "#000" }}
+              href="/epaper"
+            >
+              <li className={styles.MediaIco}>
+                <Image
+                  src="/newspaper.svg"
+                  alt="newspapers"
+                  width={24}
+                  height={24}
+                />
+              </li>
+            </Link>
           </ul>
         </div>
+
       </div>
     </div>
     </>

@@ -34,7 +34,7 @@
   max-width: 1280px;
   position: relative;
   
-  margin-top: 5%;
+  margin-top: 3%;
   overflow: hidden;
   /* width: 100%; */
   /* height: 200vh;
@@ -108,7 +108,7 @@
 
   .boundry {
     /* border: 1px solid red; */
-    margin: 0%;
+    margin: 5%;
   }
 
   .HomePage {
