@@ -24,15 +24,19 @@ function Nav() {
         <input type="checkbox" id={styles.check} />
 
         <div className={styles.logo}>
+         
           <Link href="/">
+          <div className={styles.imagescale}>
             <Image
               className={styles.imgs}
               src="/Logo.png"
-              width={200}
+              width={278}
               height={50}
               alt="Logo"
             />
+            </div>
           </Link>
+          
           {/* <div className="date">
             {date.toLocaleDateString()} {date.toLocaleTimeString()}
           </div> */}
@@ -61,8 +65,9 @@ function Nav() {
                 <Image
                   src="/home.svg"
                   alt="Home"
-                  width={24}
-                  height={24}
+                  width={28}
+                  height={28}
+                  // style={{marginTop: "5%"}}
                 />
                 <div className={styles.infosize2}>હોમ</div>
 
@@ -76,8 +81,8 @@ function Nav() {
                 <Image
                   src="/play-button.svg"
                   alt="Video"
-                  width={24}
-                  height={24}
+                  width={28}
+                  height={28}
                 />
                 <div className={styles.infosize} >વીડિઓ</div>
               </li>
@@ -90,8 +95,8 @@ function Nav() {
                 <Image
                   src="/search.svg"
                   alt="Search"
-                  width={24}
-                  height={24}
+                  width={28}
+                  height={28}
                 />
 
                 <div className={styles.infosize}>સર્ચ કરો</div>
@@ -105,8 +110,8 @@ function Nav() {
                 <Image
                   src="/newspaper.svg"
                   alt="newspapers"
-                  width={24}
-                  height={24}
+                  width={28}
+                  height={28}
                 />
                 <div className={styles.infosize}>ઇ-પેપર્સ</div>
               </li>

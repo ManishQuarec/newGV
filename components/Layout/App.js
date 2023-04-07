@@ -18,6 +18,7 @@ import RightPhotoImage from "../RightPhotoImage/Comimg";
 // import EPapers from "./Component/E-Papers/Papers.jsx";
 // import { FullNews } from "./Component/FullNews/FullNews";
 // import FullNewsPost from "./Component/FullNews/FullNewsPost";
+import Bottom from "../BottomNAV/Bottom"
 import Coming from "../ComingSoon/Coming";
 // import Bottom from "../BottomNAV/Bottom";
 // import News from "./Component/news/News";
@@ -91,9 +92,11 @@ function App({children}) {
             </div>
             <div className={styles.MiddleSection}>
            {children}
+           <Bottom/>
             </div>
             <div className={styles.RightSection}>
               <RightPhotoImage />
+              
               {/* <Coming /> */}
             </div>
           </div>

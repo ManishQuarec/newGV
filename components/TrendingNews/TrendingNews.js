@@ -16,6 +16,17 @@ import Image from "next/image";
 // import {Helmet} from "react-helmet";
 
 function TrendingNews() {
+
+  const facebookClick = (url) => {
+    const shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
+    window.open(shareUrl, "_blank");
+  };
+
+
+  const twitterClick = (url) => {
+    const twitterUrl = `https://twitter.com/intent/tweet?url=${url}`;
+    window.open(twitterUrl, '_blank', 'width=550,height=420');
+  };
   const router = useRouter();
   const [resData, setResData] = useState("");
 
@@ -99,10 +110,10 @@ function TrendingNews() {
               onClick={() => {
                 toastOnClick(
                   process.env.NEXT_PUBLIC_FRONT_FILES +
-                    "category/" +
-                    resData.EngCategory +
-                    "/" +
-                    resData._id
+                  "category/" +
+                  resData.EngCategory +
+                  "/" +
+                  resData._id
                 );
 
                 // navigator.clipboard.writeText(process.env.NEXT_PUBLIC_FRONT_FILES + "fullnews/" + resData._id);
@@ -112,11 +123,33 @@ function TrendingNews() {
               className={styles.SocialIconed}
               href="#"
               icon={faFacebook}
+              onClick={() => {
+                facebookClick(
+                  process.env.NEXT_PUBLIC_FRONT_FILES +
+                  "category/" +
+                  resData.EngCategory +
+                  "/" +
+                  resData._id
+                );
+
+                // navigator.clipboard.writeText(process.env.NEXT_PUBLIC_FRONT_FILES + "fullnews/" + resData._id);
+              }}
             ></FontAwesomeIcon>
             <FontAwesomeIcon
               className={styles.SocialIconed}
               href="#"
               icon={faTwitter}
+              onClick={() => {
+                twitterClick(
+                  process.env.NEXT_PUBLIC_FRONT_FILES +
+                  "category/" +
+                  resData.EngCategory +
+                  "/" +
+                  resData._id
+                );
+
+                // navigator.clipboard.writeText(process.env.NEXT_PUBLIC_FRONT_FILES + "fullnews/" + resData._id);
+              }}
             ></FontAwesomeIcon>
           </div>
         </div>

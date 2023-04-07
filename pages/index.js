@@ -8,6 +8,7 @@ import TrendingNews from "@/components/TrendingNews/TrendingNews";
 import NewsBlock from "@/components/NewsBlock/NewsBlock";
 import Bottom from "@/components/BottomNAV/Bottom";
 import img from "../public/favicon.png"
+// import bottom from "../components/BottomNAV/Bottom"
 // import Papers from "@/components/E-Papers/Papers";
 
 // import TrendingNews from '@/components/TrendingNews/TrendingNews'

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styles from "../../styles/NewsBlock.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {faLink } from "@fortawesome/free-solid-svg-icons";
+import { faLink } from "@fortawesome/free-solid-svg-icons";
 import { faFacebook, faTwitter } from "@fortawesome/free-brands-svg-icons";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
@@ -18,6 +18,17 @@ import { ToastContainer } from 'react-toastify';
 // import MetaDecorator from "../MetaTag/Metatag";
 
 function NewsBlock(props) {
+
+  const facebookClick = (url) => {
+    const shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
+    window.open(shareUrl, "_blank");
+  };
+
+  
+  const twitterClick = (url) => {
+    const twitterUrl = `https://twitter.com/intent/tweet?url=${url}`;
+    window.open(twitterUrl, '_blank', 'width=550,height=420');
+  };
   const router = useRouter();
   console.log("props", props.value.data);
   // console.log(process.env.REACT_APP_FRONT_FILES);
@@ -38,7 +49,7 @@ function NewsBlock(props) {
       hideProgressBar: true,
       autoClose: 2000,
       type: "success",
-      position:'bottom-right'
+      position: 'bottom-right'
     });
     navigator.clipboard.writeText(url);
   };
@@ -54,11 +65,11 @@ function NewsBlock(props) {
 
       await router.push({
         pathname: "/category/[maincategory]/[fullnews]",
-        query: { maincategory: `${e.category}`, fullnews:`${e._id}`  }
+        query: { maincategory: `${e.category}`, fullnews: `${e._id}` }
       });
       // await router.replace(
       //   "category" + "/" + `${e.category}` + "/" + `${e._id}`
-        
+
       // );
 
       console.log("category" + "/" + `${e.category}` + "/" + `${e._id}`);
@@ -108,23 +119,23 @@ function NewsBlock(props) {
     {
       props.value.unique == true
         ? axios
-            .post(process.env.NEXT_PUBLIC_API_BASE_URL + "/allNews")
-            .then(async (response) => {
-              // console.log(response.data.response);
-              await setNewsDatas(response.data.response);
+          .post(process.env.NEXT_PUBLIC_API_BASE_URL + "/allNews")
+          .then(async (response) => {
+            // console.log(response.data.response);
+            await setNewsDatas(response.data.response);
 
-              console.log("res1");
-            })
+            console.log("res1");
+          })
         : axios
-            .post(process.env.NEXT_PUBLIC_API_BASE_URL + "/allNewsData", {
-              data: `${props.value.data}`,
-            })
-            .then(async (response) => {
-              // console.log(response.data.response);
-              await setNewsDatas(response.data.response);
-              console.log("res2");
-              // console.log(response.data.response);
-            });
+          .post(process.env.NEXT_PUBLIC_API_BASE_URL + "/allNewsData", {
+            data: `${props.value.data}`,
+          })
+          .then(async (response) => {
+            // console.log(response.data.response);
+            await setNewsDatas(response.data.response);
+            console.log("res2");
+            // console.log(response.data.response);
+          });
     }
   }, [props.value.unique, props.value.data]);
 
@@ -132,7 +143,7 @@ function NewsBlock(props) {
     // <a href={`/FullNews/${news._id}`} className="ntres">
 
     <>
-    <ToastContainer />
+      <ToastContainer />
       {/* {props.value.unique? null :<MetaDecorator  description={"Category Block"}
         title={"Category Block"}
         imageUrl={"Category Block"}
@@ -195,9 +206,9 @@ function NewsBlock(props) {
                     toastOnClick(
                       process.env.NEXT_PUBLIC_FRONT_FILES + "category/" +
                       news.EngCategory + "/" +
-                        news._id
+                      news._id
                     )
-                    
+
                     // handleCopyUrl(
                     //   process.env.NEXT_PUBLIC_FRONT_FILES +
                     //     "fullnews/" +
@@ -211,14 +222,28 @@ function NewsBlock(props) {
                     icon={faLink}
                   ></FontAwesomeIcon>
                 </div>
-                <div>
+                <div onClick={(e) => {
+                  facebookClick(
+                    process.env.NEXT_PUBLIC_FRONT_FILES + "category/" +
+                    news.EngCategory + "/" +
+                    news._id
+                  )
+
+                }}>
                   <FontAwesomeIcon
                     className={styles.SocialIconed2}
                     href="#"
                     icon={faFacebook}
                   ></FontAwesomeIcon>
                 </div>
-                <div>
+                <div onClick={(e) => {
+                  twitterClick(
+                    process.env.NEXT_PUBLIC_FRONT_FILES + "category/" +
+                    news.EngCategory + "/" +
+                    news._id
+                  )
+
+                }}>
                   <FontAwesomeIcon
                     className={styles.SocialIconed2}
                     href="#"
