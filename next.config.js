@@ -11,9 +11,15 @@
 
 
 module.exports = {
-  images: {
-    domains: ['secretseventeen.com'],
-  },
+  // images: {
+  //   // domains: ['secretseventeen.com', "http://localhost:5000"],
+  //   domains: ['localhost:5000'],
+  // },
+
+  reactStrictMode: true,
+  images : {
+    domains : ['secretseventeen.com', 'localhost'] // <== Domain name
+  }
 }
 
 // module.exports = nextConfig

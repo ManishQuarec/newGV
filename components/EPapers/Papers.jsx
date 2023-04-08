@@ -62,7 +62,7 @@ function Papers() {
 
             <div className={styles.upload} key={index}>
               <button onClick={(e) => download(news.Path)}>
-                <Image src={PapersIMG} alt=""  className={styles.upload}/>
+                <Image src={PapersIMG} alt=""  />
                 <p>
                   તારીખ:-{news.NewsPaperDate}<br />
                   શનિવાર
