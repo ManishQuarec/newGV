@@ -12,6 +12,10 @@ function Papers() {
 
   const [newsData, setNewsData] = useState([]);
 
+  // var record = [...newsData].sort((a, b) => Date.parse(b.NewsPaperDate) - Date.parse(a.NewsPaperDate));
+
+  let record = newsData.sort((a, b) => new Date(...a.NewsPaperDate.split('-').reverse()) - new Date(...b.NewsPaperDate.split('-').reverse()));
+  // console.log(record);
 
 
   const download = (e) => {
@@ -56,16 +60,17 @@ function Papers() {
         <h2>ઈ-ન્યુઝ પેપર્સ</h2>
       </div>
       <div className={styles.Collection}>
-        
-        {newsData.slice(0)
+
+        {record.slice(0)
           .reverse().map((news, index) => (
 
             <div className={styles.upload} key={index}>
               <button onClick={(e) => download(news.Path)}>
-                <Image src={PapersIMG} alt=""  />
+                <Image src={PapersIMG} alt="" />
                 <p>
                   તારીખ:-{news.NewsPaperDate}<br />
-                  શનિવાર
+
+                  દિવસ:-{news.Day ? news.Day : "રવિવાર"}
                 </p>
               </button>
             </div>
@@ -73,99 +78,7 @@ function Papers() {
           ))}
 
 
-        {/* <div className="upload">
-          <img src={PapersIMG} alt="" />
-          <p>
-            તારીખ:-20/08/2022 <br />
-            શનિવાર
-          </p>
-        </div>
-        <div className="upload">
-          <img src={PapersIMG} alt="" />
-          <p>
-            તારીખ:-20/08/2022 <br />
-            શનિવાર
-          </p>
-        </div>
-        <div className="upload">
-          <img src={PapersIMG} alt="" />
-          <p>
-            તારીખ:-20/08/2022 <br />
-            શનિવાર
-          </p>
-        </div>
-        <div className="upload">
-          <img src={PapersIMG} alt="" />
-          <p>
-            તારીખ:-20/08/2022 <br />
-            શનિવાર
-          </p>
-        </div>
-        <div className="upload">
-          <img src={PapersIMG} alt="" />
-          <p>
-            તારીખ:-20/08/2022 <br />
-            શનિવાર
-          </p>
-        </div>
-        <div className="upload">
-          <img src={PapersIMG} alt="" />
-          <p>
-            તારીખ:-20/08/2022 <br />
-            શનિવાર
-          </p>
-        </div>
-      </div>
-      <div className="Collection">
-        <div className="upload">
-          <img src={PapersIMG} alt="" />
-          <p>
-            તારીખ:-20/08/2022 <br />
-            શનિવાર
-          </p>
-        </div>
-        <div className="upload">
-          <img src={PapersIMG} alt="" />
-          <p>
-            તારીખ:-20/08/2022 <br />
-            શનિવાર
-          </p>
-        </div>
-        <div className="upload">
-          <img src={PapersIMG} alt="" />
-          <p>
-            તારીખ:-20/08/2022 <br />
-            શનિવાર
-          </p>
-        </div>
-        <div className="upload">
-          <img src={PapersIMG} alt="" />
-          <p>
-            તારીખ:-20/08/2022 <br />
-            શનિવાર
-          </p>
-        </div>
-        <div className="upload">
-          <img src={PapersIMG} alt="" />
-          <p>
-            તારીખ:-20/08/2022 <br />
-            શનિવાર
-          </p>
-        </div>
-        <div className="upload">
-          <img src={PapersIMG} alt="" />
-          <p>
-            તારીખ:-20/08/2022 <br />
-            શનિવાર
-          </p>
-        </div>
-        <div className="upload">
-          <img src={PapersIMG} alt="" />
-          <p>
-            તારીખ:-20/08/2022 <br />
-            શનિવાર
-          </p>
-        </div> */}
+
       </div>
     </>
   );

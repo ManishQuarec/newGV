@@ -1,6 +1,6 @@
 .FullHead{
     /* border: 1px solid red; */
-    width: 90%;
+    width: 94%;
     height: 610px;
     border: 1px solid  #eaeaea;
     padding: 20px 20px 8px;
@@ -94,9 +94,10 @@
 }
 
 
-@media all and (min-width:689px) and (max-width:1025px) {
-    .NewFooter {
-        /* width:80%; */
+@media all and (min-width:771px) and (max-width:1025px) {
+    .FullHead{
+        /* border: 1px solid red; */
+        width: 90%;
     }
 
 }

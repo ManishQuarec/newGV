@@ -42,7 +42,7 @@ export default function Home() {
         />
         <link rel="shortcut icon" href="/favicon.ico" />
 
-
+        <meta name="google-site-verification" content="zGgHJz2irKeMA-BJqqQ2N9FK5NDP385rFy_SARY4eSo" />
      
 
         {/* ---- */}
