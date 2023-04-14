@@ -22,8 +22,9 @@ display: flex;
 
 .ImageBoundary{
 
-    /* border: 1px solid magenta; */
-    height: 50%;
+    border: 1px solid magenta;
+    height: 395px;
+    width: 222px;
     padding:1%;
 }
 
@@ -71,7 +72,7 @@ display: flex;
 }
 
 .footer{
-    /* border: 1px solid blue; */
+    border: 1px solid blue;
     height: 1.5rem;
     width:99%;
     margin-bottom: 1%;

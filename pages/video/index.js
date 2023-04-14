@@ -5,7 +5,7 @@ import Video from '@/components/Video/video';
 function VideoPlayer() {
   return (
     <>
-      <Nav />
+      {/* <Nav /> */}
       <Video/>
 
       
