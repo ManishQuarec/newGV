@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import styles from "../../styles/Video.module.css"
 import Image from 'next/image';
 import axios from "axios";
+import TimeAgo from "../Timeago/Timeago";
+
 
 
 
@@ -10,12 +12,17 @@ import axios from "axios";
 
 function video() {
 
+  const handleClick = (e) => {
+    console.log(e);
+
+  }
+
   const [recived, setRecived] = useState([]);
 
   useEffect(() => {
 
     axios
-      .get(process.env.NEXT_PUBLIC_API_BASE_URL + "/getAllVideoData").then(async(response) => {
+      .get(process.env.NEXT_PUBLIC_API_BASE_URL + "/getAllVideoData").then(async (response) => {
         await setRecived(response.data);
       })
 
@@ -29,27 +36,33 @@ function video() {
     <div className={styles.Tagbody}>
       <div className={styles.VideoBoundary}>
 
-        {recived.map((item,index) => (
-          
-            <div className={styles.ImageBoundary} key={item._id} >
-              <div className={styles.ImgBoundaries} key={item._id} >
-              
-                <div key={item._id} >
+        {recived.map((item, index) => (
+
+
+          <div className={styles.ImageBoundary} key={item._id}  onClick={(e)=>{handleClick(item.VideoPath)}}>
+            <div className={styles.ImgBoundaries} key={item._id} >
+
+              <div  key={item._id} >
                 <Image
-                  src={process.env.NEXT_PUBLIC_API_URL + `${item.ImagePath}` }
+                  // src={process.env.NEXT_PUBLIC_API_URL + `${item.ImagePath}` }
+                  src={"/Imggg.png"}
                   alt="My Image"
                   width={222}
                   height={395}
                 />
+              </div>
+              <div className={styles.ef624bc1}><svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 24 24"><path fill="white" d="m15 12.33l-6 4.33V8l6 4.33Z" /></svg></div>
+              <div className={styles.boudriBlack}>
+
+                <div  className={styles.textcontent}><div style={{ color: `${item.Colored}` }} className={styles.tittle}>{item.NewsTittle}</div> <div className={styles.subtittle} >{item.NewsSubTittle} </div>
+                <div className={styles.footer}> <div className={styles.Category}>{item.GujCategory}</div> <div className={styles.DateTime}><TimeAgo timestamp={`${item.CreatedDate}`} /></div></div>
                 </div>
-                <div className={styles.ef624bc1}><svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 24 24"><path fill="white" d="m15 12.33l-6 4.33V8l6 4.33Z" /></svg></div>
-                <div className={styles.textcontent}><span>adta name are wjccnsdc ncas cascb scnascas asncasc</span> :<span >adta name are wjccnsdc ncas cascb scnascas asncasc</span>
-                  <div className={styles.footer}> <span className={styles.Category}>data</span> <span className={styles.DateTime}>data</span></div>
-                </div>
+                
               </div>
             </div>
+          </div>
 
-          
+
 
         ))}
 
