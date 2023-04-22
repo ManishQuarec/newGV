@@ -1,12 +1,12 @@
 import React from 'react'
-import VideoNews from '@/components/Videonews/videoNews'
+import VideoNews from '@/components/videoNews/videoNewsed'
 
 function index() {
   return (<>
-
-    <VideoNews/>
-    </>
     
+    <VideoNews />
+  </>
+
   )
 }
 

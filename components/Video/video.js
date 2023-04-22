@@ -3,6 +3,8 @@ import styles from "../../styles/Video.module.css"
 import Image from 'next/image';
 import axios from "axios";
 import TimeAgo from "../Timeago/Timeago";
+import { useRouter } from "next/navigation";
+// import videoNews from "";
 
 
 
@@ -11,24 +13,34 @@ import TimeAgo from "../Timeago/Timeago";
 
 
 function video() {
+  const router = useRouter();
 
-  const handleClick = (e) => {
-    console.log(e);
 
-  }
 
   const [recived, setRecived] = useState([]);
+  const handleClick = async (e) => {
+    console.log(e);
+  
+  //  await  router.push( "/video/videonews");
+   await router.push({
+    pathname: "/video/[videoNews]",
+    query: { videoNews: e }
+  });
+
+  }
 
   useEffect(() => {
 
     axios
       .get(process.env.NEXT_PUBLIC_API_BASE_URL + "/getAllVideoData").then(async (response) => {
         await setRecived(response.data);
+        
       })
+     
 
   }, [])
 
-  console.log(recived);
+  
   console.log(process.env.NEXT_PUBLIC_API_URL + "Video//Videoimages//2023//4//14/corona27032023.jpg");
 
 
@@ -39,13 +51,13 @@ function video() {
         {recived.map((item, index) => (
 
 
-          <div className={styles.ImageBoundary} key={item._id}  onClick={(e)=>{handleClick(item.VideoPath)}}>
+          <div className={styles.ImageBoundary} key={item._id}  onClick={(e)=>{handleClick(index)}}>
             <div className={styles.ImgBoundaries} key={item._id} >
 
               <div  key={item._id} >
                 <Image
-                  // src={process.env.NEXT_PUBLIC_API_URL + `${item.ImagePath}` }
-                  src={"/Imggg.png"}
+                  src={process.env.NEXT_PUBLIC_API_URL + `${item.ImagePath}` }
+                  // src={"/Imggg.png"}
                   alt="My Image"
                   width={222}
                   height={395}
@@ -66,11 +78,7 @@ function video() {
 
         ))}
 
-        {/* ----------------------------------- */}
-
-
-
-        {/* --------------------------------- */}
+      
 
       </div>
     </div>
