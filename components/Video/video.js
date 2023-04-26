@@ -56,6 +56,7 @@ function video() {
 
               <div  key={item._id} >
                 <Image
+                style={{borderRadius: "4px" }}
                   src={process.env.NEXT_PUBLIC_API_URL + `${item.ImagePath}` }
                   // src={"/Imggg.png"}
                   alt="My Image"

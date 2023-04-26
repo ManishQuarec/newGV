@@ -27,5 +27,12 @@
     "react-toastify": "^9.1.2",
     "sharp": "^0.32.0",
     "swiper": "^9.2.0"
+  },
+  "devDependencies": {
+    "@iconify/icons-ic": "^1.2.13",
+    "@iconify/icons-mdi": "^1.2.44",
+    "@iconify/icons-ph": "^1.2.4",
+    "@iconify/icons-ri": "^1.2.7",
+    "@iconify/react": "^4.1.0"
   }
 }
