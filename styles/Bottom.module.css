@@ -32,8 +32,12 @@
     background: #FFF;
     width: 95%;
     z-index: 99;
-    height: 8%;
-    padding: 3%;
+    height: 33px;
+    padding: 10px 10px;
+  }
+
+  .I86iuu {
+    font-size: 10px;
   }
 }
 
@@ -44,10 +48,33 @@
   }
 } */
 
-@media all and (min-width:360px) and (max-width:480px) {
+/* @media all and (min-width:360px) and (max-width:480px) {
   .IYMAIN {
-    /* text-decoration: none; */
-    /* width:83%; */
+    text-decoration: none;
+    width:83%;
   }
 
+} */
+@media all and (max-width: 650px) {
+  .IYMAIN {
+    width: 95%;
+    height: 33px;
+    padding: 10px 10px;
+  }
+
+  .I86iuu {
+    font-size: 12px;
+  }
+}
+
+@media all and (max-width:450px) {
+  .I86iuu {
+    font-size: 10px;
+  }
+
+  .Bottom_IYMAIN__8xH5r {
+    width: 95%;
+    height: 24px;
+    padding: 10px 5px 5px 5px;
+  }
 }

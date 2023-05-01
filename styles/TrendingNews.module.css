@@ -1,30 +1,33 @@
-.FullHead{
+.FullHead {
     /* border: 1px solid red; */
     width: 94%;
-    height: 610px;
-    border: 1px solid  #eaeaea;
+    height: auto;
+    border: 1px solid #eaeaea;
     padding: 20px 20px 8px;
-    cursor: pointer; 
+    cursor: pointer;
 
 }
-.idcolor{
-    color:#ff554b
+
+.idcolor {
+    color: #ff554b
 }
-.Imges{
+
+.Imges {
     position: relative;
     /* border :1px solid red; */
-    width:100%;
+    width: 100%;
     height: 389px
 }
-.catted{
+
+.catted {
     height: 24px;
     width: 150px;
     font-weight: bold;
 }
 
-.FullHead h3{
+.FullHead h3 {
     height: auto;
-    width:auto;
+    width: auto;
     line-height: 36px;
     font-size: 24px;
 }
@@ -45,10 +48,11 @@
     height: 2rem;
     color: #808080;
 
- 
+
 }
+
 .SocialIcon {
-    height:36px;
+    height: 36px;
     /* width:150px; */
     display: flex;
     flex-direction: row;
@@ -56,20 +60,21 @@
     /* justify-content: space-between; */
     /* right:0 */
     /* align-items: center; */
-   
+
 }
-.SocialIconed{
- padding-left: 10px;
- height:24px;
- width:24px;
+
+.SocialIconed {
+    padding-left: 10px;
+    height: 24px;
+    width: 24px;
 }
 
 @media all and (min-width:360px) and (max-width:480px) {
-    .FullHead{
+    .FullHead {
         width: 88%;
-        height: 610px;
+        height: auto;
         border-top: none;
-        
+
     }
 
     /* .FullHead Image {
@@ -81,24 +86,22 @@
         height:20rem
     } */
     .FullHead h3 {
-    
+
         line-height: 28px;
         font-size: 15px;
     }
 
     .SocialIcon {
         flex-direction: row-reverse
-        
     }
-    
+
 }
 
 
 @media all and (min-width:771px) and (max-width:1025px) {
-    .FullHead{
+    .FullHead {
         /* border: 1px solid red; */
         width: 90%;
     }
 
 }
-
