@@ -155,7 +155,7 @@ function NewsBlock(props) {
         .reverse()
         .map((news, index) => (
           <div className={styles.BlockHead} key={index}>
-            {console.log(news.EngCategory)}
+            {console.log("news", news)}
             <div
               className={styles.refl}
               onClick={(e) => {
@@ -198,7 +198,7 @@ function NewsBlock(props) {
             </div>
 
             <div className={styles.NewFooter2}>
-              <div className="cated">{news.GujCategory}</div>
+              <div className="cated">{news.GujSubCategory? news.GujSubCategory: news.GujCategory}</div>
 
               <div className={styles.SocialIcon2}>
                 <div

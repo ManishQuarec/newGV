@@ -75,7 +75,7 @@ function Nav() {
             </Link>
             <Link
               style={{ textDecoration: "none", color: "#000" }}
-              href="/coming"
+              href="/video"
             >
               <li className={styles.link}>
                 <Image
