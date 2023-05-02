@@ -89,7 +89,7 @@ function Nav() {
             </Link>
             <Link
               style={{ textDecoration: "none", color: "#000" }}
-              href="/coming"
+              href="/search"
             >
               <li className={styles.link}>
                 <Image

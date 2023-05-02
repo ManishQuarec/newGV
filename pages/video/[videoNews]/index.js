@@ -1,5 +1,5 @@
 import React from 'react'
-import VideoNews from '@/components/videoNews/videoNewsed'
+import VideoNews from '@/components/videoNews/VideoNewsed'
 
 function index({article}) {
   console.log("article", article);

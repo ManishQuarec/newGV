@@ -1,0 +1,89 @@
+.MHSf9671 {
+    width: 95%;
+    display: flex;
+    justify-content: center;
+    margin-top: 4rem;
+}
+.JAS81 {
+    width: 75%;
+}
+.vbgae12 {
+    margin-top: 5%;
+    border: none;
+    border-bottom: 1px solid #BEBEBE;
+    width: 100%;
+    padding: 14px 10px 12px 70px;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 36px;
+    display: flex;
+    align-items: center;
+    color: #2B2B2B;
+    font-weight: bold;
+    background: url(https://www.divyabhaskar.co.in/assets/images/inputSearchIcon.05d19af3.svg)no-repeat 5px center;
+    background-size: 30px;
+}
+.JAS81 input:focus {
+    outline: none;
+}
+.Serchitems091 {
+    display: contents;
+}
+.Ngah61 {
+    font-family: Helvetica, sans-serif;
+    font-style: normal;
+    font-size: 20px;
+    line-height: 30px;
+    text-align: center;
+    color: #2B2B2B;
+    display: inline-block;
+    align-self: center;
+    margin: 10px;
+    border-radius: 50px;
+    border: 1px solid #EAEAEA;
+    padding: 8px 25px;
+    white-space: nowrap;
+    font-weight: bold;
+}
+.Ngah61:hover {
+    color: #F89C1D;
+    border-color: #F89C1D;
+    cursor: pointer;
+}
+@media only screen and (max-width: 2000px) and (min-width: 1700px) {
+    .Ngah61 {
+        font-size: 24px;
+    }
+    .vbgae12 {
+        font-size: 30px;
+        background-size: 35px;
+    }
+}
+@media all and (max-width: 800px) {
+    .MHSf9671 {
+        width: 100%;
+    }
+    .JAS81 {
+        width: 100%;
+    }
+    .Ngah61 {
+        font-size: 17px;
+        line-height: 13px;
+        margin: 5px 10px;
+        padding: 10px 10px;
+    }
+    .vbgae12 {
+        padding: 14px 10px 12px 40px;
+        font-size: 20px;
+        background-size: 21px;
+    }
+}
+@media all and (max-width: 500px) {
+    .Ngah61 {
+        font-size: 15px;
+        line-height: 7px;
+        margin: 5px 10px;
+        padding: 10px 10px;
+    }
+}

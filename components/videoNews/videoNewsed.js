@@ -2,14 +2,31 @@ import React, { useEffect, useState } from "react";
 import styles from "../../styles/Videonews.module.css";
 import axios from "axios";
 import TimeAgo from "../Timeago/Timeago";
-import Image from "next/image";
-import { Icon } from "@iconify/react";
-import facebookFill from "@iconify/icons-ri/facebook-fill";
-import twitterIcon from "@iconify/icons-mdi/twitter";
-import linkSimpleBold from "@iconify/icons-ph/link-simple-bold";
-import roundClose from "@iconify/icons-ic/round-close";
 
-function videoNewsed(props) {
+import Image from 'next/image';
+import { Icon } from '@iconify/react';
+import facebookFill from '@iconify/icons-ri/facebook-fill';
+import twitterIcon from '@iconify/icons-mdi/twitter';
+import linkSimpleBold from '@iconify/icons-ph/link-simple-bold';
+import roundClose from '@iconify/icons-ic/round-close';
+import { useRouter  } from 'next/router';
+
+
+
+
+function VideoNewsed(props) {
+
+  const router = useRouter()
+
+ 
+  // function handleGoBack() {
+  //   console.log("clicked");
+  //   const history = useHistory();
+
+  //   history.goBack();
+  // }
+
+
   const [recived, setRecived] = useState({});
 
   const [videoSrc, setVideoSrc] = useState("");
@@ -34,7 +51,10 @@ function videoNewsed(props) {
     <>
       <div className={styles.fullheight}>
         <div className={styles.header}>
-          <div className={styles.readNews}>Read News</div>
+
+
+          {/* <div className={styles.readNews }>Read News</div> */}
+
           <div className={`${styles.icon} ${styles.facebook}`}>
             {/* <Image
             style={{color:"green"}}
@@ -58,19 +78,17 @@ function videoNewsed(props) {
             />
           </div>
           <div className={`${styles.icon} ${styles.link}`}>
-            <Icon
-              style={{ height: "31px", width: "38px", marginTop: "10%" }}
-              icon={linkSimpleBold}
-              className={styles.linkSimple}
-            />
-          </div>
-          <div className={`${styles.icon} ${styles.link}`}>
-            <Icon
-              style={{ height: "31px", width: "38px", marginTop: "10%" }}
-              icon={roundClose}
-              className={styles.linkSimple}
-            />
-          </div>
+
+          
+          <Icon style={{height:"31px", width:"38px", marginTop:"10%"}} icon={linkSimpleBold} className={styles.linkSimple} />
+         
+        </div>
+        <div className={`${styles.icon} ${styles.link}`} onClick={(e)=> {router.back()}}>
+          
+          <Icon style={{height:"31px", width:"38px", marginTop:"10%"}}  icon={roundClose} className={styles.linkSimple} />
+         
+        </div>
+
         </div>
 
         <div className={styles.videoborder}>
@@ -103,4 +121,6 @@ function videoNewsed(props) {
   );
 }
 
-export default videoNewsed;
+
+export default VideoNewsed
+

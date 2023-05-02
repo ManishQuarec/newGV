@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react"
 import styles from "../../styles/Video.module.css"
 import Image from 'next/image';
 import axios from "axios";
 import TimeAgo from "../Timeago/Timeago";
-import { useRouter } from "next/navigation";
+import { useRouter } from 'next/router';
+
 // import videoNews from "";
 
 
@@ -12,8 +13,10 @@ import { useRouter } from "next/navigation";
 
 
 
-function video() {
+function Video() {
   const router = useRouter();
+
+
 
 
 
@@ -86,4 +89,4 @@ function video() {
   )
 }
 
-export default video
+export default Video
