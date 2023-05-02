@@ -17,9 +17,9 @@
 }
 
 .videoborder video {
-    /* height: 100%; */
+    height: 90vh;
     object-fit: contain;
-    min-height: 820px;
+    /* min-height: 820px; */
     width: 100%;
 }
 
@@ -82,7 +82,8 @@
     margin: 0 20px;
     min-height: 64px;
 }
-.readNews{
+
+.readNews {
     cursor: pointer;
     margin: 0 5px;
     background-color: #929496;
@@ -92,30 +93,30 @@
     font-weight: 600;
     line-height: 40px;
     padding: 0 20px;
-    font-family: LocalFont,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif;
+    font-family: LocalFont, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen-Sans, Ubuntu, Cantarell, Helvetica Neue, sans-serif;
 
 }
 
-.readNews:hover{
-    background-color:white
+.readNews:hover {
+    background-color: white
 }
 
 .icon Image {
     fill: white;
- }
+}
 
-.icon{
+.icon {
 
-height: 40px;
-width: 40px;
-border: 1px solid black; 
-border-radius: 200px;
+    height: 40px;
+    width: 40px;
+    border: 1px solid black;
+    border-radius: 200px;
     cursor: pointer;
-    color:black;
-    background-color:#929496 ;
+    color: black;
+    background-color: #929496;
     margin-left: 1%;
 
-/* 
+    /* 
     display: flex;
 	position: relative;
 	overflow: hidden; 
@@ -129,25 +130,27 @@ border-radius: 200px;
 	transition: var(--trans-property);
 
     /* margin: auto; */
-	/* font-size: 24px; */
-	color: #18191a;
-	z-index: 1; 
-	transition: var(--trans-property); 
-}
-.facebook:hover{
-    background-color: #1769ff;
-   
-   
+    /* font-size: 24px; */
+    color: #18191a;
+    z-index: 1;
+    transition: var(--trans-property);
 }
 
-.facebook:hover .facebookicon{
+.facebook:hover {
+    background-color: #1769ff;
+
+
+}
+
+.facebook:hover .facebookicon {
     color: white;
 }
 
 .twitter:hover {
     background-color: #1da1f2;
 }
-.twitter:hover .twitterIcon{
+
+.twitter:hover .twitterIcon {
     color: white;
 }
 
@@ -160,14 +163,14 @@ border-radius: 200px;
 
 
 
-.icon:after{
+.icon:after {
     content: "";
-	width: var(--link-size);
-	height: var(--link-size);
-	position: absolute;
-	transform: translate(0, var(--link-size));
-	border-radius: 50%;
-	transition: var(--trans-property);
+    width: var(--link-size);
+    height: var(--link-size);
+    position: absolute;
+    transform: translate(0, var(--link-size));
+    border-radius: 50%;
+    transition: var(--trans-property);
     background-color: #1769ff;
 }
 
