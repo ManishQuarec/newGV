@@ -44,34 +44,46 @@ function Search() {
 
                 setDatas(refre)
                 console.log(datas);
-                setFilteredResults(refre)
+               
+
+                console.log("refre", refre);
 
 
-                const refres = await response.data.data.map((item, index) => {
-                    console.log(item)
+               
 
-                    item.SubCategory.map((ite, index) => {
+                const refres = await Promise.all(response.data.data.map(async (item, index) => {
+                    const subCategories = await Promise.all(item.SubCategory.map(async (ite, index) => {
+                      return { engCate: item.Category.EngCategory, gujCategory: item.Category.GujCategory, engSubCate: ite.EngSubCategory, gujSubCategory: ite.GujSubCategory };
+                    }));
+                    return subCategories;
+                  }));
+                  
+                  const result = refres.reduce((acc, curr) => {
+                    return [...acc, ...curr];
+                  }, []);
 
-                        return { engCate: item.EngCategory, gujCategory: item.GujCategory }
+                console.log("refres", result);
 
-                    })
+                setResData(result)
+
+
+                setFilteredResults([...refre , ...result])
+
+              
                 
-
-
-                })
-
-                console.log(refres);
-
-                setDatas([...datas, refres ])
-                // console.log(datas);
-                setFilteredResults([...filteredResults, refres])
 
             })
 
-            // console.log("datas",datas);
+
+            
+    
+        // setFilteredResults(combinedData)
 
 
-        //     console.log(resdata);
+        // console.log("datas",datas);
+      
+
+
 
         //    resdata.map(async (item, index)=> {
         //             return await item.Category.EngCategory
@@ -84,11 +96,32 @@ function Search() {
         // setFilteredResults(refre)
 
         // filterData();
+// const neti = async () => {
+//         const combinedData =  [...datas, ...resdata];
+//         console.log("combinedData", combinedData);
+     
+//         await setFilteredResults(combinedData)
+//         console.log(filteredResults);
+
+//     }
+
+//     neti();
+
+        
     }, [searchText == ""]);
 
 
-    console.log(filteredResults);
 
+
+   
+    const dataSend = async (e) => {
+        console.log("e", e);
+
+        window.location.href = e;
+        // await router.replace(e);
+
+        // window.location.reload();
+    }
 
 
 
@@ -107,8 +140,12 @@ function Search() {
                     />
                     <div className={styles.Serchitems091}>
                         {filteredResults.map((item) => (
-                            <p className={styles.Ngah61} key={item.id}>
-                                {item.gujCategory}
+                            // {console.log(item)}
+                            <p className={styles.Ngah61} key={item.id} onClick={(e) => {
+                                dataSend("/category/" + `${item.engCate}`);
+                            }}>
+                                {item.gujSubCategory? item.gujSubCategory:item.gujCategory}
+                                {/* {item.gujCategory}  */}
                             </p>
                         ))}
                     </div>

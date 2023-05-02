@@ -8,13 +8,22 @@ import facebookFill from '@iconify/icons-ri/facebook-fill';
 import twitterIcon from '@iconify/icons-mdi/twitter';
 import linkSimpleBold from '@iconify/icons-ph/link-simple-bold';
 import roundClose from '@iconify/icons-ic/round-close';
+import { useRouter  } from 'next/router';
 
 
 
 
-function videoNewsed(props) {
+function VideoNewsed(props) {
 
+  const router = useRouter()
 
+ 
+  // function handleGoBack() {
+  //   console.log("clicked");
+  //   const history = useHistory();
+
+  //   history.goBack();
+  // }
 
   const [recived, setRecived] = useState({});
 
@@ -49,7 +58,8 @@ function videoNewsed(props) {
 
 
       <div className={styles.fullheight}>
-        <div className={styles.header}><div className={styles.readNews }>Read News</div>
+        <div className={styles.header}>
+          {/* <div className={styles.readNews }>Read News</div> */}
           <div className={`${styles.icon} ${styles.facebook}`}>
             {/* <Image
             style={{color:"green"}}
@@ -72,7 +82,7 @@ function videoNewsed(props) {
           <Icon style={{height:"31px", width:"38px", marginTop:"10%"}} icon={linkSimpleBold} className={styles.linkSimple} />
          
         </div>
-        <div className={`${styles.icon} ${styles.link}`}>
+        <div className={`${styles.icon} ${styles.link}`} onClick={(e)=> {router.back()}}>
           
           <Icon style={{height:"31px", width:"38px", marginTop:"10%"}}  icon={roundClose} className={styles.linkSimple} />
          
@@ -105,4 +115,4 @@ function videoNewsed(props) {
 };
 
 
-export default videoNewsed
+export default VideoNewsed

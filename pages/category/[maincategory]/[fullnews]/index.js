@@ -4,12 +4,12 @@ import App from '@/components/Layout/App';
 import axios from "axios";
 import Head from "next/head";
 
-function fullnews({articles, data}) {
-    // console.log("articles", data.response[0] );
+function fullnews({ articles, data }) {
+  // console.log("articles", data.response[0] );
   return (
     <>
 
-    <Head>
+      <Head>
         <title>{data.response[0].NewsTittle}</title>
         <meta name="title" content={data.response[0].NewsTittle} />
         <meta name="description" content={data.response[0].NewsSubTittle} />
@@ -24,7 +24,7 @@ function fullnews({articles, data}) {
         <meta property="twitter:card" content="summary_large_image" />
         <meta property="twitter:url" content="https://www.gujaratvandan.com/" />
         <meta property="twitter:title" content={data.response[0].NewsTittle} />
-        <meta property="twitter:description" content={data.response[0].NewsSubTittle}/>
+        <meta property="twitter:description" content={data.response[0].NewsSubTittle} />
         <meta
           property="twitter:image"
           content={process.env.NEXT_PUBLIC_API_URL + data.response[0].Path}
@@ -36,9 +36,9 @@ function fullnews({articles, data}) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" /> */}
       </Head>
-    <App>
-    <FullNews value={{data:articles}}/>
-    </App>
+      <App>
+        <FullNews value={{ data: articles }} />
+      </App>
     </>
   )
 }
@@ -48,33 +48,33 @@ export default fullnews
 
 export async function getServerSideProps(context) {
 
-  
 
-    const { params } = context
-    console.log(params);
-    const { fullnews } = params
-    // console.log(params);
 
-    // const response = await fetch('https://secretseventeen.com/call/allNewsDataId',{data:fullnews} )
-    
-   const data = await axios
+  const { params } = context
+  console.log(params);
+  const { fullnews } = params
+  // console.log(params);
+
+  // const response = await fetch('https://secretseventeen.com/call/allNewsDataId',{data:fullnews} )
+
+  const data = await axios
     .post(process.env.NEXT_PUBLIC_API_BASE_URL + "/allNewsDataId", {
       data: fullnews,
     })
-    
-    // .then(async(response)=> {
-      console.log("datrr",data.data);
 
-    // })
-   
+  // .then(async(response)=> {
+  console.log("datrr", data.data);
 
-    // const data = await response.json()
+  // })
 
-    return {
-        props: {
-            articles: fullnews,
-            data:data.data
-        }
+
+  // const data = await response.json()
+
+  return {
+    props: {
+      articles: fullnews,
+      data: data.data
     }
+  }
 
 }
