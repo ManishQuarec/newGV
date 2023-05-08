@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 // import "./IMG-CSS/FullNews.css";
-import styles from "../../styles/Fullnews.module.css"
+import styles from "../../styles/FullNews.module.css"
 import BenIMG from "./IMG-CSS/BenImg.png";
 // import { Route, Routes, BrowserRouter, useParams } from "react-router-dom";
 import axios from "axios";
