@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import styles from "../styles/search.module.css"
 import Nav from "@/components/Nav/Nav";
 import axios from "axios";
+import Bottom from "../components/BottomNAV/Bottom"
 function Search() {
     const [searchText, setSearchText] = useState("");
     const [filteredResults, setFilteredResults] = useState([]);
@@ -44,44 +45,44 @@ function Search() {
 
                 setDatas(refre)
                 console.log(datas);
-               
+
 
                 console.log("refre", refre);
 
 
-               
+
 
                 const refres = await Promise.all(response.data.data.map(async (item, index) => {
                     const subCategories = await Promise.all(item.SubCategory.map(async (ite, index) => {
-                      return { engCate: item.Category.EngCategory, gujCategory: item.Category.GujCategory, engSubCate: ite.EngSubCategory, gujSubCategory: ite.GujSubCategory };
+                        return { engCate: item.Category.EngCategory, gujCategory: item.Category.GujCategory, engSubCate: ite.EngSubCategory, gujSubCategory: ite.GujSubCategory };
                     }));
                     return subCategories;
-                  }));
-                  
-                  const result = refres.reduce((acc, curr) => {
+                }));
+
+                const result = refres.reduce((acc, curr) => {
                     return [...acc, ...curr];
-                  }, []);
+                }, []);
 
                 console.log("refres", result);
 
                 setResData(result)
 
 
-                setFilteredResults([...refre , ...result])
+                setFilteredResults([...refre, ...result])
 
-              
-                
+
+
 
             })
 
 
-            
-    
+
+
         // setFilteredResults(combinedData)
 
 
         // console.log("datas",datas);
-      
+
 
 
 
@@ -96,24 +97,24 @@ function Search() {
         // setFilteredResults(refre)
 
         // filterData();
-// const neti = async () => {
-//         const combinedData =  [...datas, ...resdata];
-//         console.log("combinedData", combinedData);
-     
-//         await setFilteredResults(combinedData)
-//         console.log(filteredResults);
+        // const neti = async () => {
+        //         const combinedData =  [...datas, ...resdata];
+        //         console.log("combinedData", combinedData);
 
-//     }
+        //         await setFilteredResults(combinedData)
+        //         console.log(filteredResults);
 
-//     neti();
+        //     }
 
-        
+        //     neti();
+
+
     }, [searchText == ""]);
 
 
 
 
-   
+
     const dataSend = async (e) => {
         console.log("e", e);
 
@@ -144,13 +145,14 @@ function Search() {
                             <p className={styles.Ngah61} key={item.id} onClick={(e) => {
                                 dataSend("/category/" + `${item.engCate}`);
                             }}>
-                                {item.gujSubCategory? item.gujSubCategory:item.gujCategory}
+                                {item.gujSubCategory ? item.gujSubCategory : item.gujCategory}
                                 {/* {item.gujCategory}  */}
                             </p>
                         ))}
                     </div>
                 </div>
             </div>
+            <Bottom />
         </>
     );
 }

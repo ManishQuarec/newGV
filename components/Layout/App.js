@@ -92,7 +92,6 @@ function App({children}) {
             </div>
             <div className={styles.MiddleSection}>
            {children}
-           <Bottom/>
             </div>
             <div className={styles.RightSection}>
               <RightPhotoImage />
@@ -101,6 +100,7 @@ function App({children}) {
             </div>
           </div>
         </div>
+        <Bottom/>
     </>
   );
 }

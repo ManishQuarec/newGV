@@ -13,9 +13,9 @@ function Bottom() {
   return (
     <>
       <div className={styles.IYMAIN}>
-        <Link className={styles.I86iuu}  href="/" ><FontAwesomeIcon icon={faHome}></FontAwesomeIcon><br />વાંચો</Link>
-        <Link className={styles.I86iuu} href="/Coming"><FontAwesomeIcon icon={faPlayCircle}></FontAwesomeIcon><br />જુઓ</Link>
-        <Link className={styles.I86iuu} href="/"><FontAwesomeIcon icon={faSearch}></FontAwesomeIcon><br />શોધો</Link>
+        <Link className={styles.I86iuu} href="/" ><FontAwesomeIcon icon={faHome}></FontAwesomeIcon><br />વાંચો</Link>
+        <Link className={styles.I86iuu} href="/video"><FontAwesomeIcon icon={faPlayCircle}></FontAwesomeIcon><br />જુઓ</Link>
+        <Link className={styles.I86iuu} href="/search"><FontAwesomeIcon icon={faSearch}></FontAwesomeIcon><br />શોધો</Link>
       </div>
     </>
   );
